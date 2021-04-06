@@ -1,0 +1,4 @@
+Bitboard representation: White then black, pieces in order: pawn, knight, bishop, rook, queen, king
+  - Lowercase: black, Uppercase: white
+  - stored in row major order, starting with far left corner (from Whites perspective, close right from black's)
+  - last 5 elems: 1 if white's turn next, 1 if castling available (White kingside & Queenside, black Kingside & queenside)
