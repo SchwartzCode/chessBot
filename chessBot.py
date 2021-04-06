@@ -14,5 +14,5 @@ class chessBot:
 # currently just for testing
 if __name__ == "__main__":
     print('oi')
-    test = chessGame()
+    test = chessBot()
     test.showBoard()
