@@ -131,7 +131,7 @@ def convertGameToBoards(game, whiteWin):
 
 with open(dataPath) as f:
     lines = f.read().split("\n")
-    for i in range(939, 1000):#range(len(lines)-1):
+    for i in range(20000):#range(len(lines)-1):
         if(lines[i][0]) == '#':
             pass
             # this line isn't a game, skip it
@@ -151,10 +151,11 @@ with open(dataPath) as f:
                     continue
 
             # store all moves after 5 in big array
-            if 'allWinningStates' in locals() and winningStates.shape[0] > 5:
+            # make sure we can skip first 5 moves and that there isn't only 1 move
+            if 'allWinningStates' in locals() and winningStates.shape[0] > 5 and len(winningStates.shape) == 2:
                 allWinningStates = np.vstack([allWinningStates, winningStates[5:]])
                 allLosingStates = np.vstack([allLosingStates, losingStates[5:]])
-            elif winningStates.shape[0] > 5:
+            elif winningStates.shape[0] > 5 and len(winningStates.shape) == 2:
                 allWinningStates = winningStates[5:]
                 allLosingStates = losingStates[5:]
 
